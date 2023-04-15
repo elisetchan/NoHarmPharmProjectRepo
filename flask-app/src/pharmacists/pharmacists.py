@@ -22,12 +22,11 @@ def get_customer(userID):
 
 # Access/Modify patient's list of drugs
 @pharmacists.route('/patients/<userID>/drugs', methods=['GET', 'POST', 'DELETE'])
-def post_patients_drugs(userID):
-
+def access_patient_drugs(userID):
     # Get patient's list of drugs
     if request.method == 'GET':
         cursor = db.get_db().cursor()
-        cursor.execute('SELECT MName from [Layman Patients] JOIN patient_med USING PUsername WHERE id = {id}'.format(id=userID))
+        cursor.execute('SELECT MName from [Layman Patients] JOIN patient_med USING PUsername WHERE PUsername = {id}'.format(id=userID))
         row_headers = [x[0] for x in cursor.description]
         json_data = []
         theData = cursor.fetchall()
@@ -117,7 +116,7 @@ def get_patient_drug_indication(userID, name):
 
 # Get detailed educational information for a drug
 @pharmacists.route('/drugs/<name>/detail', methods=['GET'])
-def get_patient_drug_indication(name):
+def get_drug_info(name):
     cursor = db.get_db().cursor()
     cursor.execute('SELECT Description, EdInfo FROM Medications WHERE MName = {name}'.format(name=name))
     row_headers = [x[0] for x in cursor.description]

@@ -1,0 +1,168 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Pharmacists Tests",
+    "dateExported": "2023-04-15T21:31:33.501Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "bb035c95-0a37-4d5d-b425-70bba37a5e1d",
+            "name": "AddDrugtoPatient",
+            "containerId": "",
+            "created": "2023-04-15T21:21:50.792Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "1b96486c-08d9-43cc-89f8-dd5adb7aed00",
+            "name": "GetPatientDrugs",
+            "containerId": "",
+            "created": "2023-04-15T21:22:06.169Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "d572d4ef-472a-4d28-a2b8-7bcfe35a86d5",
+            "name": "DeleteDrugFromPatient",
+            "containerId": "",
+            "created": "2023-04-15T21:28:09.291Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "62a1abd9-62cf-4c0f-ac10-a46f827d4336",
+            "name": "getDrugWarnings",
+            "containerId": "",
+            "created": "2023-04-15T21:30:15.614Z",
+            "sortNum": 50000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "e6a5b330-1470-467f-ae82-70c38c995962",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "bb035c95-0a37-4d5d-b425-70bba37a5e1d",
+            "name": "newPatientDrugTest1",
+            "url": "localhost:8001/p/patients/0/drugs",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-04-15T19:42:19.648Z",
+            "modified": "2023-04-15T21:21:54.013Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"MName\" : \"testDrug1\",\n  \"Indication\" : \"does random effect 1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1a0aaac8-335f-4f24-b7ec-e82551242e30",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "bb035c95-0a37-4d5d-b425-70bba37a5e1d",
+            "name": "newPatientDrugTest2",
+            "url": "localhost:8001/p/patients/1/drugs",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-04-15T21:12:47.234Z",
+            "modified": "2023-04-15T21:21:55.034Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"MName\" : \"testDrug2\",\n  \"Indication\" : \"does random effect 2\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3276ab0e-f748-409e-b4a0-94025881a46f",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "1b96486c-08d9-43cc-89f8-dd5adb7aed00",
+            "name": "getPatientDrugTest1",
+            "url": "",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-04-15T21:22:16.951Z",
+            "modified": "2023-04-15T21:22:16.951Z",
+            "headers": []
+        },
+        {
+            "_id": "e12af162-7479-45a0-9d1f-4213e339e0bb",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "1b96486c-08d9-43cc-89f8-dd5adb7aed00",
+            "name": "getPatientDrugTest2",
+            "url": "localhost:8001/p/patients/1/drugs",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-04-15T21:22:41.518Z",
+            "modified": "2023-04-15T21:27:49.932Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a5524649-aa8b-4541-8256-121304e81581",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "d572d4ef-472a-4d28-a2b8-7bcfe35a86d5",
+            "name": "deletePatientDrugTest1",
+            "url": "localhost:8001/p/patients/0/drugs",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-04-15T21:28:19.634Z",
+            "modified": "2023-04-15T21:29:19.396Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"MName\" : \"testDrug1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d7b55366-65a6-49c3-8b6b-e35913415838",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "d572d4ef-472a-4d28-a2b8-7bcfe35a86d5",
+            "name": "deletePatientDrugTest2",
+            "url": "",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-04-15T21:28:22.660Z",
+            "modified": "2023-04-15T21:29:17.257Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"MName\" : \"testDrug2\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "28130909-4b0f-43d4-b4c7-10ff27252a54",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "62a1abd9-62cf-4c0f-ac10-a46f827d4336",
+            "name": "getDrugWarningTest1",
+            "url": "localhost:8001/drugs/testDrug1/warnings",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-04-15T21:30:22.689Z",
+            "modified": "2023-04-15T21:31:02.699Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "aaa552a4-802f-4390-bd54-472f11bc5990",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "62a1abd9-62cf-4c0f-ac10-a46f827d4336",
+            "name": "getDrugWarningTest2",
+            "url": "localhost:8001/drugs/testDrug2/warnings",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-04-15T21:30:28.494Z",
+            "modified": "2023-04-15T21:31:08.254Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
