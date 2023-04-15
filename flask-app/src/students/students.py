@@ -74,6 +74,24 @@ def add_drug():
     db.get_db().commit()
     return "yay"
 
+@students.route('/students', methods=['GET'])
+def get_notes():
+    current_app.logger.info('Processing form data')
+    req_data = request.get_json()
+    current_app.logger.info(req_data)
+
+    med_name = req_data['medication_name']
+
+    cursor = db.get_db().cursor()
+    cursor.execute('select Description from student_notes where MName = "' + med_name + '"')
+    column_headers = [x[0] for x in cursor.description]
+    json_data = []
+    theData = cursor.fetchall()
+    for row in theData:
+        json_data.append(dict(zip(column_headers, row)))
+
+    return jsonify(json_data)
+
 @students.route('/students', methods=['PUT'])
 def add_notes():
     current_app.logger.info('Processing form data')
@@ -99,7 +117,7 @@ def delete_drugs():
     req_data = request.get_json()
     current_app.logger.info(req_data)
 
-    med_name = req_data['medication_name']
+    med_name = req_data['deletion_name']
 
     query = 'delete from student_med where MName = "'
     query += med_name
