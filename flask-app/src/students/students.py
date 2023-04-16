@@ -1,23 +1,97 @@
-from flask import Blueprint, request, jsonify, make_response
+from flask import Blueprint, request, jsonify, make_response, current_app
 import json
 from src import db
 
 
 students = Blueprint('students', __name__)
 
-@students.route('/students', methods=['GET'])
-def get_study_list():
+
+# Get study list for student with particular userID/name
+@students.route('/students/<userID>', methods=['GET'])
+def get_study_list(userID):
     cursor = db.get_db().cursor()
-    cursor.execute('select MName from PharmacyStudent join student_med using (EdUsername)')
-    column_headers = [x[0] for x in cursor.description]
+    cursor.execute('select Mname from student_med where EdUsername = {0}'.format(userID))
+
+    row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
     for row in theData:
-        json_data.append(dict(zip(column_headers, row)))
+        json_data.append(dict(zip(row_headers, row)))
+    the_response = make_response(jsonify(json_data))
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
 
-    return jsonify(json_data)
+# Add drug to a Student's study list
+@students.route('/students/<userID>', methods=['POST'])
+def add_drugs(userID):
+    current_app.logger.info('Processing form data')
+    req_data = request.get_json()
+    current_app.logger.info(req_data)
 
-@students.route('/students', methods=['GET'])
+    drug_name = req_data['drug_name']
+
+    insert_stmt = 'INSERT INTO student_med (MNAme, EdUsername) VALUES(")'
+    insert_stmNt+= drug_name + '","'+ userID + ')'
+    current_app.logger.info(insert_stmt)
+    cursor = db.get_db().cursor()
+    cursor.execute(insert_stmt)
+    db.get_db().commit()
+    return 'Success'
+
+# Delete drug from a Student's study list
+@students.route('/students/<userID>', methods=['DELETE'])
+def delete_drugs(userID):
+    if request.method == 'DELETE':
+        current_app.logger.info('Processing form data')
+        req_data = request.get_json()
+        current_app.logger.info(req_data)
+
+        drug_name = req_data['drug_name']
+
+        del_stmt = 'DELETE FROM student_med WHERE MName="'
+        del_stmt+= drug_name + '"AND EdUsername="'+ userID + ')'
+        current_app.logger.info(del_stmt)
+        cursor = db.get_db().cursor()
+        cursor.execute(del_stmt)
+        db.get_db().commit()
+        return 'Success'
+    
+@students.route('/students/<userID>', methods=['DELETE'])
+def delete_notes(userID):
+    current_app.logger.info('Processing form data')
+    req_data = request.get_json()
+    current_app.logger.info(req_data)
+
+    drug_name = req_data['drug_name']
+
+    del_stmt = 'DELETE FROM student_notes WHERE MName="'
+    del_stmt+= drug_name + '"AND EdUsername="'+ userID + ')'
+    current_app.logger.info(del_stmt)
+    cursor = db.get_db().cursor()
+    cursor.execute(del_stmt)
+    db.get_db().commit()
+    return 'Success'
+
+@students.route('/students/<userID>', methods=['PUT'])
+def update_notes(userID):
+    current_app.logger.info('Processing form data')
+    req_data = request.get_json()
+    current_app.logger.info(req_data)
+
+    drug_name = req_data['drug_name']
+    new_notes = req_data['new_notes']
+
+    insert_stmt = 'UPDATE student_notes SET Description ="'
+    insert_stmt+= new_notes + '" WHERE EdUsername="'+ userID + '" AND MName="'+ drug_name+'"'
+    current_app.logger.info(insert_stmt)
+    cursor = db.get_db().cursor()
+    cursor.execute(insert_stmt)
+    db.get_db().commit()
+    return 'Success'
+    
+
+@students.route('/students/learn', methods=['GET'])
 def get_sample_case():
     cursor = db.get_db().cursor()
     cursor.execute('select SampProb from samp_prob order by rand() limit 1')
@@ -29,7 +103,7 @@ def get_sample_case():
 
     return jsonify(json_data)
 
-@students.route('/students', methods=['GET'])
+@students.route('/students/learn', methods=['GET'])
 def get_drug_ed_info():
     cursor = db.get_db().cursor()
     cursor.execute('select EdInfo from Medications')
@@ -41,7 +115,7 @@ def get_drug_ed_info():
 
     return jsonify(json_data)
 
-@students.route('/students', methods=['GET'])
+@students.route('/students/learn', methods=['GET'])
 def get_all_uses():
     cursor = db.get_db().cursor()
     cursor.execute('select u.Descriptions from Medications m join use_casesM u using (MName) group by MName')
@@ -52,79 +126,3 @@ def get_all_uses():
         json_data.append(dict(zip(column_headers, row)))
 
     return jsonify(json_data)
-
-
-from flask import current_app
-@students.route('/students', methods=['POST'])
-def add_drug():
-    current_app.logger.info('Processing form data')
-    req_data = request.get_json()
-    current_app.logger.info(req_data)
-
-    med_name = req_data['medication_name']
-    user = 'username'
-
-    query = 'insert into student_med (medication_name, EdUsername) values("'
-    query += med_name + '", "' + user + '")'
-
-    current_app.logger.info(query)
-
-    cursor = db.get_db().cursor()
-    cursor.execute(query)
-    db.get_db().commit()
-    return "yay"
-
-@students.route('/students', methods=['GET'])
-def get_notes():
-    current_app.logger.info('Processing form data')
-    req_data = request.get_json()
-    current_app.logger.info(req_data)
-
-    med_name = req_data['medication_name']
-
-    cursor = db.get_db().cursor()
-    cursor.execute('select Description from student_notes where MName = "' + med_name + '"')
-    column_headers = [x[0] for x in cursor.description]
-    json_data = []
-    theData = cursor.fetchall()
-    for row in theData:
-        json_data.append(dict(zip(column_headers, row)))
-
-    return jsonify(json_data)
-
-@students.route('/students', methods=['PUT'])
-def add_notes():
-    current_app.logger.info('Processing form data')
-    req_data = request.get_json()
-    current_app.logger.info(req_data)
-
-    med_name = req_data['medication_name']
-    notes = req_data['new_notes']
-
-    query = 'update student_notes set description = "'
-    query += notes + '"where MName = "' + med_name
-
-    current_app.logger.info(query)
-
-    cursor = db.get_db().cursor()
-    cursor.execute(query)
-    db.get_db().commit()
-    return "yay"
-
-@students.route('/students', methods=['DELETE'])
-def delete_drugs():
-    current_app.logger.info('Processing form data')
-    req_data = request.get_json()
-    current_app.logger.info(req_data)
-
-    med_name = req_data['deletion_name']
-
-    query = 'delete from student_med where MName = "'
-    query += med_name
-
-    current_app.logger.info(query)
-
-    cursor = db.get_db().cursor()
-    cursor.execute(query)
-    db.get_db().commit()
-    return "yay"
