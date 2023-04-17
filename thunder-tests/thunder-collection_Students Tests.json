@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Students Tests",
-    "dateExported": "2023-04-17T15:39:50.667Z",
+    "dateExported": "2023-04-17T16:00:19.594Z",
     "version": "1.1",
     "folders": [
         {
@@ -88,6 +88,120 @@
             "modified": "2023-04-17T15:39:16.263Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "641cfe79-e6e0-4d51-9daf-3d48aaf3738c",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "b133dc54-5ea3-42eb-badb-4fbacf4cbc17",
+            "name": "AddStudyTest1",
+            "url": "localhost:8001/s/students/acurleyd",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-04-17T15:41:51.702Z",
+            "modified": "2023-04-17T15:46:16.610Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\" : \"Aspirin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "22d9d36f-8702-4c81-a95b-ac9c5b2ee926",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "b133dc54-5ea3-42eb-badb-4fbacf4cbc17",
+            "name": "AddStudyTest2",
+            "url": "localhost:8001/s/students/nbourdon4",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-04-17T15:49:15.134Z",
+            "modified": "2023-04-17T15:50:34.377Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\" : \"Ibuprofen\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3cf2e9d3-8979-48b9-838d-70f49b0e8afd",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "bf79c602-20ea-43a8-b003-8ed724d72b32",
+            "name": "DeleteStudyTest1",
+            "url": "localhost:8001/s/students/nbourdon4",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-04-17T15:51:18.594Z",
+            "modified": "2023-04-17T15:56:15.526Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\" : \"Aspirin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5382f05e-c8f7-4b80-88b4-aa1709390082",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "bf79c602-20ea-43a8-b003-8ed724d72b32",
+            "name": "DeleteStudyTest2",
+            "url": "localhost:8001/s/students/acurleyd",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2023-04-17T15:51:26.625Z",
+            "modified": "2023-04-17T15:53:23.606Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\" : \"Ibuprofen\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "57ec8ea4-89d8-4b28-ade8-e5fe734f231a",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "fd8247ef-aea2-4386-b3ef-7354c8ca710d",
+            "name": "DeleteNotesTest1",
+            "url": "localhost:8001/s/students/nbourdon4",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2023-04-17T15:57:03.207Z",
+            "modified": "2023-04-17T15:58:56.965Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\" : \"Celecoxib\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "62d268d1-5b46-4fa5-9392-bb6cf4f2b111",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "fd8247ef-aea2-4386-b3ef-7354c8ca710d",
+            "name": "DeleteNotesTest2",
+            "url": "localhost:8001/s/students/kaylwardo",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2023-04-17T15:57:12.417Z",
+            "modified": "2023-04-17T15:59:30.611Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\" : \"Ibuprofen\"\n}",
+                "form": []
+            },
             "tests": []
         }
     ]

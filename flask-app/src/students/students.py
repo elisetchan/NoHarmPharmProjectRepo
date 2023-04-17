@@ -31,8 +31,8 @@ def add_drugs(userID):
 
     drug_name = req_data['drug_name']
 
-    insert_stmt = 'INSERT INTO student_med (MNAme, EdUsername) VALUES(")'
-    insert_stmNt+= drug_name + '","'+ userID + ')'
+    insert_stmt = 'INSERT INTO student_med (MName, EdUsername) VALUES("'
+    insert_stmt += drug_name + '","'+ userID + '")'
     current_app.logger.info(insert_stmt)
     cursor = db.get_db().cursor()
     cursor.execute(insert_stmt)
@@ -49,8 +49,8 @@ def delete_drugs(userID):
 
         drug_name = req_data['drug_name']
 
-        del_stmt = 'DELETE FROM student_med WHERE MName="'
-        del_stmt+= drug_name + '"AND EdUsername="'+ userID + ')'
+        del_stmt = 'DELETE FROM student_med WHERE (MName = "'
+        del_stmt += drug_name + '" AND EdUsername = "'+ userID + '")'
         current_app.logger.info(del_stmt)
         cursor = db.get_db().cursor()
         cursor.execute(del_stmt)
@@ -65,8 +65,8 @@ def delete_notes(userID):
 
     drug_name = req_data['drug_name']
 
-    del_stmt = 'DELETE FROM student_notes WHERE MName="'
-    del_stmt+= drug_name + '"AND EdUsername="'+ userID + ')'
+    del_stmt = 'DELETE FROM student_notes WHERE (MName = "'
+    del_stmt+= drug_name + '" AND EdUsername = "'+ userID + '")'
     current_app.logger.info(del_stmt)
     cursor = db.get_db().cursor()
     cursor.execute(del_stmt)
