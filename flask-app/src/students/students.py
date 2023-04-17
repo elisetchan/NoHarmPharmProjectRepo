@@ -90,7 +90,7 @@ def update_notes(userID):
     req_data = request.get_json()
     current_app.logger.info(req_data)
 
-    drug_name = req_data['list_name']
+    drug_name = req_data['drug_name']
     new_notes = req_data['new_notes']
 
     insert_stmt = 'UPDATE student_notes SET Description ="'
