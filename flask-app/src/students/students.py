@@ -10,7 +10,7 @@ students = Blueprint('students', __name__)
 @students.route('/students/<userID>', methods=['GET'])
 def get_study_list(userID):
     cursor = db.get_db().cursor()
-    cursor.execute('select Mname from student_med where EdUsername = {0}'.format(userID))
+    cursor.execute('select Mname from student_med where EdUsername = "' + userID + '"')
 
     row_headers = [x[0] for x in cursor.description]
     json_data = []
