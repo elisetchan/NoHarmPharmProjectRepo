@@ -76,7 +76,7 @@ def delete_notes(userID):
 
     drug_name = req_data['list_name']
 
-    del_stmt = 'DELETE FROM student_notes WHERE (MName = "'
+    del_stmt = 'DELETE FROM student_notes WHERE (Mname = "'
     del_stmt += drug_name + '" AND EdUsername = "'+ userID + '")'
     current_app.logger.info(del_stmt)
     cursor = db.get_db().cursor()
