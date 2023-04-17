@@ -23,7 +23,7 @@ def get_study_list(userID):
     return the_response
 
 # Add drug to a Student's study list
-@students.route('/students/<userID>', methods=['POST'])
+@students.route('/students/<userID>/drugs', methods=['POST'])
 def add_drugs(userID):
     current_app.logger.info('Processing form data')
     req_data = request.get_json()
@@ -32,7 +32,7 @@ def add_drugs(userID):
     drug_name = req_data['drug_name']
 
     insert_stmt = 'INSERT INTO student_med (MNAme, EdUsername) VALUES(")'
-    insert_stmNt+= drug_name + '","'+ userID + ')'
+    insert_stmt+= drug_name + '","'+ userID + ')'
     current_app.logger.info(insert_stmt)
     cursor = db.get_db().cursor()
     cursor.execute(insert_stmt)
@@ -40,7 +40,7 @@ def add_drugs(userID):
     return 'Success'
 
 # Delete drug from a Student's study list
-@students.route('/students/<userID>', methods=['DELETE'])
+@students.route('/students/<userID>/drugs', methods=['DELETE'])
 def delete_drugs(userID):
     if request.method == 'DELETE':
         current_app.logger.info('Processing form data')
@@ -57,7 +57,7 @@ def delete_drugs(userID):
         db.get_db().commit()
         return 'Success'
     
-@students.route('/students/<userID>', methods=['DELETE'])
+@students.route('/students/<userID>/notes', methods=['DELETE'])
 def delete_notes(userID):
     current_app.logger.info('Processing form data')
     req_data = request.get_json()
@@ -73,7 +73,7 @@ def delete_notes(userID):
     db.get_db().commit()
     return 'Success'
 
-@students.route('/students/<userID>', methods=['PUT'])
+@students.route('/students/<userID>/notes', methods=['PUT'])
 def update_notes(userID):
     current_app.logger.info('Processing form data')
     req_data = request.get_json()
@@ -91,7 +91,7 @@ def update_notes(userID):
     return 'Success'
     
 
-@students.route('/students/learn', methods=['GET'])
+@students.route('/students/learn/sc', methods=['GET'])
 def get_sample_case():
     cursor = db.get_db().cursor()
     cursor.execute('select SampProb from samp_prob order by rand() limit 1')
@@ -103,7 +103,7 @@ def get_sample_case():
 
     return jsonify(json_data)
 
-@students.route('/students/learn', methods=['GET'])
+@students.route('/students/learn/ed', methods=['GET'])
 def get_drug_ed_info():
     cursor = db.get_db().cursor()
     cursor.execute('select EdInfo from Medications')
@@ -115,7 +115,7 @@ def get_drug_ed_info():
 
     return jsonify(json_data)
 
-@students.route('/students/learn', methods=['GET'])
+@students.route('/students/learn/uses', methods=['GET'])
 def get_all_uses():
     cursor = db.get_db().cursor()
     cursor.execute('select u.Descriptions from Medications m join use_casesM u using (MName) group by MName')
