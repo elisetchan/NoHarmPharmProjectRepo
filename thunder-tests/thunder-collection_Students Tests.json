@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Students Tests",
-    "dateExported": "2023-04-17T03:58:40.777Z",
+    "dateExported": "2023-04-17T15:39:50.667Z",
     "version": "1.1",
     "folders": [
         {
@@ -61,5 +61,34 @@
             "sortNum": 80000
         }
     ],
-    "requests": []
+    "requests": [
+        {
+            "_id": "44b1fdd6-dc91-4d3e-9955-40c5f8e6e00a",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "b4e3976e-b89f-42fa-878b-ee2fc0b71056",
+            "name": "ListTest1",
+            "url": "localhost:8001/s/students/acurleyd",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-04-17T15:16:45.052Z",
+            "modified": "2023-04-17T15:27:50.281Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2624af54-719b-486f-a92f-8139aa2bcf7f",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "b4e3976e-b89f-42fa-878b-ee2fc0b71056",
+            "name": "ListTest2",
+            "url": "localhost:8001/s/students/bdeboickc",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-04-17T15:38:52.659Z",
+            "modified": "2023-04-17T15:39:16.263Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
 }
