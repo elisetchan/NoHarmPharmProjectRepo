@@ -106,7 +106,7 @@ def get_sample_case():
 @students.route('/students/learn/ed', methods=['GET'])
 def get_drug_ed_info():
     cursor = db.get_db().cursor()
-    cursor.execute('select EdInfo from Medications')
+    cursor.execute('select MName, EdInfo from Medications')
     column_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -117,8 +117,13 @@ def get_drug_ed_info():
 
 @students.route('/students/learn/uses', methods=['GET'])
 def get_all_uses():
+    current_app.logger.info('Processing form data')
+    req_data = request.get_json()
+    current_app.logger.info(req_data)
+
+    drug_name = req_data['drug_name']
     cursor = db.get_db().cursor()
-    cursor.execute('select u.Descriptions from Medications m join use_casesM u using (MName) group by MName')
+    cursor.execute('select Description from use_casesM where MName="'+ drug_name+'"')
     column_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
