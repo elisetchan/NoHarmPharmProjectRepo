@@ -9,7 +9,7 @@ pharmacists = Blueprint('pharmacists', __name__)
 @pharmacists.route('/pharmacists/<userID>', methods=['GET'])
 def get_customer(userID):
     cursor = db.get_db().cursor()
-    cursor.execute('select * from Pharmacists where PharmEmail = {id}'.format(id=userID))
+    cursor.execute('select ClinicName, FirstName, LastName, PharmEmail from Pharmacists where PharmEmail = "{id}"'.format(id=userID))
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -26,7 +26,7 @@ def access_patient_drugs(userID):
     # Get patient's list of drugs
     if request.method == 'GET':
         cursor = db.get_db().cursor()
-        cursor.execute('SELECT MName from [Layman Patients] JOIN patient_med USING PUsername WHERE PUsername = {id}'.format(id=userID))
+        cursor.execute("SELECT MName from patient_med WHERE PUsername = '{id}'".format(id=userID))
         row_headers = [x[0] for x in cursor.description]
         json_data = []
         theData = cursor.fetchall()
@@ -51,7 +51,6 @@ def access_patient_drugs(userID):
 
         cursor = db.get_db().cursor()
         cursor.execute(query)
-        db.get_db.commit()
 
     # Delete a drug from a patient's list of drugs
     elif request.method == 'DELETE':
@@ -59,13 +58,12 @@ def access_patient_drugs(userID):
         current_app.logger.info(the_data)
         drug_name = the_data['MName']
         query = 'DELETE FROM patient_med WHERE '
-        query += 'PUsername = ' + userID + ' AND '
-        query += 'MName = ' + drug_name
+        query += 'PUsername = "' + userID + '" AND '
+        query += 'MName = "' + drug_name + '"'
         current_app.logger.info(query)
 
         cursor = db.get_db().cursor()
         cursor.execute(query)
-        db.get_db.commit()
 
     return 'Success'
 
@@ -73,7 +71,8 @@ def access_patient_drugs(userID):
 @pharmacists.route('/drugs/<name>/warnings', methods = ['GET'])
 def get_drug_warnings(name):
     cursor = db.get_db().cursor()
-    cursor.execute('SELECT * from med_interactions WHERE MName1 = {name} OR MName = {name}'.format(name=name))
+    current_app.logger.info("SELECT * from med_interactions WHERE MName1 = '{name}' OR MName2 = '{name}'".format(name=name))
+    cursor.execute("SELECT * from med_interactions WHERE MName1 = '{name}' OR MName2 = '{name}'".format(name=name))
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -88,7 +87,7 @@ def get_drug_warnings(name):
 @pharmacists.route('/patients/<userID>/contact')
 def get_patient_contact(userID):
     cursor = db.get_db().cursor()
-    cursor.execute('SELECT FirstName, LastName, Phone, Email FROM [Layman Patients] WHERE PUsername = {id}'.format(id=userID))
+    cursor.execute("SELECT FirstName, LastName, Phone, Email FROM `Layman Patients` WHERE PUsername = '{id}'".format(id=userID))
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -103,7 +102,7 @@ def get_patient_contact(userID):
 @pharmacists.route('/patients/<userID>/drugs/<name>', methods=['GET'])
 def get_patient_drug_indication(userID, name):
     cursor = db.get_db().cursor()
-    cursor.execute('SELECT Indication FROM patient_med WHERE PUsername = {id} AND MName = {name}'.format(id=userID, name=name))
+    cursor.execute('SELECT Indication FROM patient_med WHERE PUsername = "{id}" AND MName = "{name}"'.format(id=userID, name=name))
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -118,7 +117,7 @@ def get_patient_drug_indication(userID, name):
 @pharmacists.route('/drugs/<name>/detail', methods=['GET'])
 def get_drug_info(name):
     cursor = db.get_db().cursor()
-    cursor.execute('SELECT Description, EdInfo FROM Medications WHERE MName = {name}'.format(name=name))
+    cursor.execute('SELECT Description, EdInfo FROM Medications WHERE MName = "{name}"'.format(name=name))
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
