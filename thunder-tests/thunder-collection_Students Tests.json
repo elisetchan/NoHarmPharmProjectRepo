@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Students Tests",
-    "dateExported": "2023-04-18T00:57:57.940Z",
+    "dateExported": "2023-04-18T01:08:49.426Z",
     "version": "1.1",
     "folders": [
         {
@@ -362,18 +362,13 @@
             "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
             "containerId": "e8de0cb8-3aee-43dc-afab-67a41b631869",
             "name": "GetNotesTest2",
-            "url": "localhost:8001/s/students/kaylwardo/notes",
+            "url": "localhost:8001/s/students/eisley2/notes",
             "method": "GET",
             "sortNum": 110000,
             "created": "2023-04-17T21:03:32.531Z",
-            "modified": "2023-04-17T21:17:46.485Z",
+            "modified": "2023-04-18T01:06:08.913Z",
             "headers": [],
             "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"list_name\" : \"Ibuprofen\"\n}",
-                "form": []
-            },
             "tests": []
         }
     ]
