@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Students Tests",
-    "dateExported": "2023-04-17T22:03:46.956Z",
+    "dateExported": "2023-04-18T00:57:57.940Z",
     "version": "1.1",
     "folders": [
         {
@@ -70,6 +70,72 @@
     ],
     "requests": [
         {
+            "_id": "1b6bfe2c-5c34-4fa3-8ec9-d9ae5182d8ad",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "ef5e7153-5f7e-4956-abb9-2640a95ab1ef",
+            "name": "get_sample_case00",
+            "url": "localhost:8001/s/students/learn/sc",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-17T23:28:40.631Z",
+            "modified": "2023-04-18T00:56:41.950Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8a07644e-b52c-4017-94fa-6bd0455d9875",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "9c89aa21-3fe6-4246-8cf7-9bae6a72f7c7",
+            "name": "get_ed_info00",
+            "url": "localhost:8001/s/students/learn/ed",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-17T23:28:40.637Z",
+            "modified": "2023-04-18T00:56:50.673Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "28421dae-804c-4f64-916f-ae5e7413817a",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "fe06293e-232f-4bec-a966-e24da9b87a65",
+            "name": "put_notes00",
+            "url": "localhost:8001/s/students/kaylwardo/notes",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2023-04-17T23:28:40.639Z",
+            "modified": "2023-04-18T00:56:57.977Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\": \"Ibuprofen\",\n  \"new_notes\": \"Ibuprofen is a medication used to manage and treat inflammatory diseases, rheumatoid disorders, mild to moderate pain, fever, dysmenorrhea, and osteoarthritis. It is also available as an over-the-counter medication for pain, usually mild. It is in the non-steroidal anti-inflammatory drug (NSAID) class of medications.\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "10e2129c-4fdf-403d-b90a-f6b83cffc55b",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "701a0c08-e11f-434f-8da6-38a37b38e969",
+            "name": "get_use_case00",
+            "url": "localhost:8001/s/students/learn/uses",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-17T23:28:40.641Z",
+            "modified": "2023-04-18T00:57:04.918Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\": \"Ibuprofen\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "44b1fdd6-dc91-4d3e-9955-40c5f8e6e00a",
             "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
             "containerId": "b4e3976e-b89f-42fa-878b-ee2fc0b71056",
@@ -81,6 +147,72 @@
             "modified": "2023-04-17T15:27:50.281Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9d459540-8dab-45b6-a96b-422bd119633a",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "ef5e7153-5f7e-4956-abb9-2640a95ab1ef",
+            "name": "get_sample_case01",
+            "url": "localhost:8001/s/students/learn/sc",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-04-17T23:28:40.636Z",
+            "modified": "2023-04-18T00:56:44.457Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "96533a8b-87be-47c5-a99c-0961f36de562",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "9c89aa21-3fe6-4246-8cf7-9bae6a72f7c7",
+            "name": "get_ed_info01",
+            "url": "localhost:8001/s/students/learn/ed",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-04-17T23:28:40.638Z",
+            "modified": "2023-04-18T00:56:52.977Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "263a2654-a23f-4ef1-a0e6-6bc1d53ff445",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "fe06293e-232f-4bec-a966-e24da9b87a65",
+            "name": "put_notes01",
+            "url": "localhost:8001/s/students/eisley2/notes",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2023-04-17T23:28:40.640Z",
+            "modified": "2023-04-18T00:57:00.085Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\": \"Aspirin\",\n  \"new_notes\": \"Aspirin is used to reduce fever and relieve mild to moderate pain from conditions such as muscle aches, toothaches, common cold, and headaches. It may be used to reduce pain and swelling in conditions such as arthritis. Aspirin is a salicylate and a nonsteroidal anti-inflammatory drug (NSAID)\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4d91af77-0530-4d06-805a-91ade4be4c56",
+            "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
+            "containerId": "701a0c08-e11f-434f-8da6-38a37b38e969",
+            "name": "get_use_case01",
+            "url": "localhost:8001/s/students/learn/uses",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-04-17T23:28:40.642Z",
+            "modified": "2023-04-18T00:57:07.142Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"drug_name\": \"Aspirin\"\n}",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -125,12 +257,12 @@
             "method": "POST",
             "sortNum": 50000,
             "created": "2023-04-17T15:49:15.134Z",
-            "modified": "2023-04-17T20:16:39.052Z",
+            "modified": "2023-04-17T23:31:58.791Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"drug_name\" : \"Aspirin\"\n}",
+                "raw": "{\n  \"medication_name\" : \"Aspirin\"\n}",
                 "form": []
             },
             "tests": []
@@ -140,16 +272,16 @@
             "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
             "containerId": "bf79c602-20ea-43a8-b003-8ed724d72b32",
             "name": "DeleteStudyTest1",
-            "url": "localhost:8001/s/students/nbourdon4",
+            "url": "localhost:8001/s/students/nbourdon4/drugs",
             "method": "DELETE",
             "sortNum": 60000,
             "created": "2023-04-17T15:51:18.594Z",
-            "modified": "2023-04-17T15:56:15.526Z",
+            "modified": "2023-04-17T23:31:49.882Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"drug_name\" : \"Aspirin\"\n}",
+                "raw": "{\n  \"deletion_name\" : \"Aspirin\"\n}",
                 "form": []
             },
             "tests": []
@@ -163,12 +295,12 @@
             "method": "DELETE",
             "sortNum": 70000,
             "created": "2023-04-17T15:51:26.625Z",
-            "modified": "2023-04-17T20:20:28.803Z",
+            "modified": "2023-04-17T23:30:31.272Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"deletion_name\" : \"Ibuprofen\"\n}",
+                "raw": "{\n  \"deletion_name\" : \"Aspirin\"\n}",
                 "form": []
             },
             "tests": []
@@ -197,16 +329,16 @@
             "colId": "8e95c67f-d31f-4784-a925-dc0be51f80a2",
             "containerId": "fd8247ef-aea2-4386-b3ef-7354c8ca710d",
             "name": "DeleteNotesTest2",
-            "url": "localhost:8001/s/students/kaylwardo",
+            "url": "localhost:8001/s/students/kaylwardo/notes",
             "method": "DELETE",
             "sortNum": 90000,
             "created": "2023-04-17T15:57:12.417Z",
-            "modified": "2023-04-17T15:59:30.611Z",
+            "modified": "2023-04-17T23:32:46.222Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"drug_name\" : \"Ibuprofen\"\n}",
+                "raw": "{\n  \"list_name\" : \"Ibuprofen\"\n}",
                 "form": []
             },
             "tests": []
