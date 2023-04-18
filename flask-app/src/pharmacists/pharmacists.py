@@ -20,6 +20,21 @@ def get_customer(userID):
     the_response.mimetype = 'application/json'
     return the_response
 
+# Get pharmacist list of patients
+@pharmacists.route('/pharmacists/<userID>/patients', methods=['GET'])
+def get_patients(userID):
+    cursor = db.get_db().cursor()
+    cursor.execute('select FirstName, LastName, DOB, Email, Phone from`Layman Patients` where PharmEmail = "{id}"'.format(id=userID))
+    row_headers = [x[0] for x in cursor.description]
+    json_data = []
+    theData = cursor.fetchall()
+    for row in theData:
+        json_data.append(dict(zip(row_headers, row)))
+    the_response = make_response(jsonify(json_data))
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
+
 # Access/Modify patient's list of drugs
 @pharmacists.route('/patients/<userID>/drugs', methods=['GET', 'POST', 'DELETE'])
 def access_patient_drugs(userID):

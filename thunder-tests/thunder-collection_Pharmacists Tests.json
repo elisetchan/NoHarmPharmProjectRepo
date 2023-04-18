@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Pharmacists Tests",
-    "dateExported": "2023-04-17T22:10:48.327Z",
+    "dateExported": "2023-04-18T00:39:48.046Z",
     "version": "1.1",
     "folders": [
         {
@@ -59,6 +59,13 @@
             "containerId": "",
             "created": "2023-04-17T21:48:26.894Z",
             "sortNum": 90000
+        },
+        {
+            "_id": "f4ee030f-609e-43e4-9080-731e7677095f",
+            "name": "getPatients",
+            "containerId": "",
+            "created": "2023-04-18T00:14:04.833Z",
+            "sortNum": 100000
         }
     ],
     "requests": [
@@ -109,7 +116,7 @@
             "method": "GET",
             "sortNum": 30000,
             "created": "2023-04-15T21:22:16.951Z",
-            "modified": "2023-04-17T21:33:56.909Z",
+            "modified": "2023-04-18T00:28:27.846Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -302,6 +309,34 @@
             "sortNum": 120000,
             "created": "2023-04-17T21:50:02.132Z",
             "modified": "2023-04-17T21:50:02.132Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "134e4adb-b2ab-48fa-a41c-17f867fb2e3d",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "f4ee030f-609e-43e4-9080-731e7677095f",
+            "name": "getPatientsTest1",
+            "url": "localhost:8001/p/pharmacists/demelinen@upenn.edu/patients",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-04-18T00:14:12.971Z",
+            "modified": "2023-04-18T00:15:17.495Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3eeac805-194c-4f86-9122-7efd9c5867d1",
+            "colId": "9070e642-1ad4-4446-af3d-c02bd8c80124",
+            "containerId": "f4ee030f-609e-43e4-9080-731e7677095f",
+            "name": "getPatientsTest2",
+            "url": "localhost:8001/p/pharmacists/bbailel@phpbb.com/patients",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-04-18T00:15:05.457Z",
+            "modified": "2023-04-18T00:15:05.457Z",
             "headers": [],
             "params": [],
             "tests": []
