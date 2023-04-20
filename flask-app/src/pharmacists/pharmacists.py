@@ -66,6 +66,7 @@ def access_patient_drugs(userID):
 
         cursor = db.get_db().cursor()
         cursor.execute(query)
+        db.get_db().commit()
 
     # Delete a drug from a patient's list of drugs
     elif request.method == 'DELETE':
@@ -79,6 +80,7 @@ def access_patient_drugs(userID):
 
         cursor = db.get_db().cursor()
         cursor.execute(query)
+        db.get_db().commit()
 
     return 'Success'
 
