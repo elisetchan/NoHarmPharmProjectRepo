@@ -1,0 +1,310 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Pharmacists Tests",
+    "dateExported": "2023-04-20T04:23:04.621Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "a1d0dd67-fad0-4818-9b59-0adb3fbc7309",
+            "name": "AddDrugtoPatient",
+            "containerId": "",
+            "created": "2023-04-17T22:01:54.024Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "e736e8b1-0fdc-454a-a12e-a1dedc25d58c",
+            "name": "GetPatientDrugs",
+            "containerId": "",
+            "created": "2023-04-17T22:01:54.025Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "4a24f1d9-fbe1-431f-9f6a-82f7a1057295",
+            "name": "DeleteDrugFromPatient",
+            "containerId": "",
+            "created": "2023-04-17T22:01:54.026Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "a8780233-cc3d-44b7-bbfa-c7459b45fced",
+            "name": "getDrugWarnings",
+            "containerId": "",
+            "created": "2023-04-17T22:01:54.027Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "f1a678b9-39f7-46e4-aad1-5523125c1fbe",
+            "name": "getPatientContact",
+            "containerId": "",
+            "created": "2023-04-17T22:01:54.028Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "eeac18f8-c47b-4a2e-b5ab-9249769112f5",
+            "name": "getPatientDrugIndication",
+            "containerId": "",
+            "created": "2023-04-17T22:01:54.029Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "16606782-06fe-427e-bd43-608bc275559a",
+            "name": "getDrugDetails",
+            "containerId": "",
+            "created": "2023-04-17T22:01:54.030Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "a5d15913-ed97-4f7b-a520-ea033585b5e7",
+            "name": "getPharmacistDetails",
+            "containerId": "",
+            "created": "2023-04-17T22:01:54.031Z",
+            "sortNum": 90000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "251f7dd8-bbff-4673-9a38-fd43e182f184",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "a1d0dd67-fad0-4818-9b59-0adb3fbc7309",
+            "name": "newPatientDrugTest1",
+            "url": "localhost:8001/p/patients/hpetre1w/drugs",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-04-17T22:01:54.024Z",
+            "modified": "2023-04-19T15:30:57.024Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"MName\" : \"Ibuprofen\",\n  \"Indication\" : \"pain\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bd30af29-9587-4cc3-9bcc-49369830941a",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "a1d0dd67-fad0-4818-9b59-0adb3fbc7309",
+            "name": "newPatientDrugTest2",
+            "url": "localhost:8001/p/patients/cluckmane4/drugs",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-04-17T22:01:54.025Z",
+            "modified": "2023-04-19T15:31:37.290Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"MName\" : \"Oxycodone\",\n  \"Indication\" : \"palliative care\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c19b20f8-4bab-446c-bf74-72684a19436c",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "e736e8b1-0fdc-454a-a12e-a1dedc25d58c",
+            "name": "getPatientDrugTest1",
+            "url": "localhost:8001/p/patients/hpetre1w/drugs",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-04-17T22:01:54.026Z",
+            "modified": "2023-04-19T15:31:52.962Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4cda1a15-3969-4e21-a9d0-bc55272d2773",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "e736e8b1-0fdc-454a-a12e-a1dedc25d58c",
+            "name": "getPatientDrugTest2",
+            "url": "localhost:8001/p/patients/cluckmane4/drugs",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-04-17T22:01:54.027Z",
+            "modified": "2023-04-19T15:32:02.909Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ff1b5809-4d93-4946-b72b-b90879606984",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "4a24f1d9-fbe1-431f-9f6a-82f7a1057295",
+            "name": "deletePatientDrugTest1",
+            "url": "localhost:8001/p/patients/tbeacroftdj/drugs",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-04-17T22:01:54.028Z",
+            "modified": "2023-04-19T15:35:01.054Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"MName\" : \"lansoprazole\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "72dd57f8-f090-4635-b027-1bafed93d16e",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "4a24f1d9-fbe1-431f-9f6a-82f7a1057295",
+            "name": "deletePatientDrugTest2",
+            "url": "localhost:8001/p/patients/pfarnon94/drugs",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-04-17T22:01:54.029Z",
+            "modified": "2023-04-19T15:35:39.143Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"MName\" : \"Permethrin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b5c27250-5dea-45ba-ba61-a8e8f7645517",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "a8780233-cc3d-44b7-bbfa-c7459b45fced",
+            "name": "getDrugWarningTest1",
+            "url": "localhost:8001/p/drugs/Ibuprofen/warnings",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-04-17T22:01:54.030Z",
+            "modified": "2023-04-19T15:35:52.763Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "05ddf945-1232-4dd4-86d4-167767d685af",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "a8780233-cc3d-44b7-bbfa-c7459b45fced",
+            "name": "getDrugWarningTest2",
+            "url": "localhost:8001/p/drugs/Menthol/warnings",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-04-17T22:01:54.031Z",
+            "modified": "2023-04-19T15:36:01.328Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f3a5f74f-ca1e-489d-bfcb-509c9f2b9a54",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "f1a678b9-39f7-46e4-aad1-5523125c1fbe",
+            "name": "getPatientContactTest1",
+            "url": "localhost:8001/p/patients/hpetre1w/contact",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-04-17T22:01:54.032Z",
+            "modified": "2023-04-19T15:36:14.032Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "38e42086-1746-44d9-8ad4-0b0cc82f2d57",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "f1a678b9-39f7-46e4-aad1-5523125c1fbe",
+            "name": "getPatientContactTest2",
+            "url": "localhost:8001/p/patients/cluckmane4/contact",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-04-17T22:01:54.033Z",
+            "modified": "2023-04-19T15:36:23.559Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1d54e678-17e8-46e2-9a03-e61255697a10",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "eeac18f8-c47b-4a2e-b5ab-9249769112f5",
+            "name": "getPatientDrugIndication1",
+            "url": "localhost:8001/p/patients/hpetre1w/drugs/Topiramate",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-04-17T22:01:54.034Z",
+            "modified": "2023-04-19T15:36:51.040Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3f87e3af-8449-492a-ad35-fbfdcccd97cf",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "eeac18f8-c47b-4a2e-b5ab-9249769112f5",
+            "name": "getPatientDrugIndication2",
+            "url": "localhost:8001/p/patients/cluckmane4/drugs/Isosorbide Dinitrate",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-04-17T22:01:54.035Z",
+            "modified": "2023-04-19T15:37:12.722Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b79ec4ba-cde1-436f-8e1f-4c7c878f5d9c",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "16606782-06fe-427e-bd43-608bc275559a",
+            "name": "getDrugDetailTest1",
+            "url": "localhost:8001/p/drugs/Ibuprofen/detail",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-04-17T22:01:54.036Z",
+            "modified": "2023-04-17T22:01:54.036Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a97e6e6d-cff5-4aea-bc08-2a5122eca8ba",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "16606782-06fe-427e-bd43-608bc275559a",
+            "name": "getDrugDetailTest2",
+            "url": "localhost:8001/p/drugs/Menthol/detail",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-04-17T22:01:54.037Z",
+            "modified": "2023-04-19T15:37:51.868Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9fbd3ccd-a931-4897-8df2-478942548aab",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "a5d15913-ed97-4f7b-a520-ea033585b5e7",
+            "name": "getPharmacistDetailsTest1",
+            "url": "localhost:8001/p/pharmacists/acovillm@ning.com",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-04-17T22:01:54.038Z",
+            "modified": "2023-04-19T15:38:39.607Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3953392a-f481-4739-b19a-049706213c11",
+            "colId": "ab4da3bd-d8ee-4721-976b-09c01ba5475e",
+            "containerId": "a5d15913-ed97-4f7b-a520-ea033585b5e7",
+            "name": "getPharmacistDetailsTest2",
+            "url": "localhost:8001/p/pharmacists/botyv@instagram.com",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-04-17T22:01:54.039Z",
+            "modified": "2023-04-19T15:38:56.678Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
