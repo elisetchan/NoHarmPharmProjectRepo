@@ -58,7 +58,7 @@ def delete_drugs(userID):
 @students.route('/students/<userID>/notes', methods=['GET'])
 def get_notes(userID):
     cursor = db.get_db().cursor()
-    cursor.execute('select Mname as label, Description as value from student_notes where (EdUsername = "' + userID + '")')
+    cursor.execute('select Mname as label, Notes as value from student_notes where (EdUsername = "' + userID + '")')
 
     column_headers = [x[0] for x in cursor.description]
     json_data = []
@@ -94,7 +94,7 @@ def update_notes(userID):
     drug_name = req_data['drug_name']
     new_notes = req_data['new_notes']
 
-    insert_stmt = 'UPDATE student_notes SET Description ="'
+    insert_stmt = 'UPDATE student_notes SET Notes ="'
     insert_stmt+= new_notes + '" WHERE (EdUsername="'+ userID + '" AND Mname="'+ drug_name+'")'
     current_app.logger.info(insert_stmt)
     cursor = db.get_db().cursor()
