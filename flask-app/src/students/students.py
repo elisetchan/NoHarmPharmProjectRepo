@@ -67,7 +67,7 @@ def get_notes(userID):
         json_data.append(dict(zip(column_headers, row)))
     return jsonify(json_data)
     
-    
+ # Delete notes for particular drug associated with student with particular userID/name   
 @students.route('/students/<userID>/notes', methods=['DELETE'])
 def delete_notes(userID):
     current_app.logger.info('Processing form data')
@@ -84,6 +84,7 @@ def delete_notes(userID):
     db.get_db().commit()
     return 'Success'
 
+# Update notes for particular drug associated with student with particular userID/name
 @students.route('/students/<userID>/notes', methods=['PUT'])
 def update_notes(userID):
     current_app.logger.info('Processing form data')
@@ -101,7 +102,7 @@ def update_notes(userID):
     db.get_db().commit()
     return 'Success'
     
-
+# Get a random sample case
 @students.route('/students/learn/sc', methods=['GET'])
 def get_sample_case():
     cursor = db.get_db().cursor()
@@ -114,6 +115,7 @@ def get_sample_case():
 
     return jsonify(json_data)
 
+# Get All Educational Info availanle and their associated medications
 @students.route('/students/learn/ed', methods=['GET'])
 def get_drug_ed_info():
     cursor = db.get_db().cursor()
@@ -126,6 +128,7 @@ def get_drug_ed_info():
 
     return jsonify(json_data)
 
+# Get all usr cases for particular medication
 @students.route('/students/learn/uses', methods=['GET'])
 def get_all_uses():
     current_app.logger.info('Processing form data')
